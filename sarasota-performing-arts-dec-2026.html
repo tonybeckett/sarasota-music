@@ -800,22 +800,93 @@
   }
 
   .act .note, td .note { color: var(--muted); font-weight: 400; }
+
+  /* Summary tab — museum-style white card */
+  .tablist { flex-wrap: wrap; }
+  #by-summary { margin: 0 0 1.25rem; }
+  .summary-card {
+    border: 1px solid #d9d3c8;
+    background: #fff;
+    color: #1b1a17;
+    color-scheme: light;
+    margin: 0 0 1.5rem;
+  }
+  .summary-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .6rem;
+    background: #3d5c52;
+    color: #f6f3ec;
+    padding: .7rem .7rem;
+  }
+  .summary-title {
+    margin: 0;
+    font-size: 1.08rem;
+    font-weight: 650;
+    letter-spacing: -.01em;
+    color: #f6f3ec;
+  }
+  .summary-head .to-top {
+    color: #d5e4de;
+    border: 1px solid rgba(246,243,236,.45);
+    border-radius: 999px;
+    padding: .15rem .6rem;
+    margin: 0;
+    font-size: .75rem;
+  }
+  .summary-head .to-top:hover,
+  .summary-head .to-top:focus-visible {
+    color: #f6f3ec;
+    border-color: #f6f3ec;
+  }
+  .summary-body {
+    padding: .9rem 1.1rem 1rem;
+    max-width: 48rem;
+    line-height: 1.55;
+    background: #fff;
+    color: #1b1a17;
+    font-size: 1.02rem;
+  }
+  .summary-body p {
+    margin: 0 0 .75rem;
+    color: #1b1a17;
+  }
+  .summary-body p:last-child { margin-bottom: 0; }
+  .summary-body h3 {
+    margin: 1.2rem 0 .35rem;
+    font-size: 1.05rem;
+    font-weight: 650;
+    letter-spacing: -.01em;
+    color: #111;
+  }
+  .summary-body a { color: #1a4d8c; }
+  .summary-body a:hover,
+  .summary-body a:focus-visible { color: #1a4d8c; text-decoration: underline; }
+  .tablist:has(#tab-by-summary[aria-selected="true"]) + #list-controls {
+    display: none !important;
+  }
+  @media print {
+    #by-summary { display: block !important; }
+  }
+
 </style>
 </head>
 <body>
 <div class="wrap" id="page-top">
   <header>
     <h1>Sarasota Performing Arts — December 2026</h1>
-    <p class="updated" style="margin:4px 0 12px;font-size:0.95rem;color:#555;">Updated Sunday, November 22, 2026, 4:06 AM ET</p>
+    <p class="updated" style="margin:4px 0 12px;font-size:0.95rem;color:#555;">Updated Wednesday, November 25, 2026, 3:45 AM ET</p>
     <div class="tablist" role="tablist" aria-label="Listing views">
-      <button type="button" role="tab" id="tab-by-date" aria-controls="by-date" aria-selected="true" tabindex="0">By Date</button>
+      <button type="button" role="tab" id="tab-by-summary" aria-controls="by-summary" aria-selected="true" tabindex="0">Summary</button>
+      <button type="button" role="tab" id="tab-by-date" aria-controls="by-date" aria-selected="false" tabindex="-1">By Date</button>
       <button type="button" role="tab" id="tab-by-venue" aria-controls="by-venue" aria-selected="false" tabindex="-1">By Venue</button>
       <button type="button" role="tab" id="tab-by-band" aria-controls="by-band" aria-selected="false" tabindex="-1">By Show</button>
       <button type="button" role="tab" id="tab-by-genre" aria-controls="by-genre" aria-selected="false" tabindex="-1">By Type</button>
       <button type="button" role="tab" id="tab-by-area" aria-controls="by-area" aria-selected="false" tabindex="-1">By Area</button>
     </div>
     
-    <div class="list-controls" id="list-controls">
+    <div class="list-controls" id="list-controls" hidden>
       <p class="venue-hidden-notice" id="venue-hidden-notice" hidden>
         <button type="button" class="venue-show-all" id="venue-show-all">0 venues hidden — show all</button>
       </p>
@@ -831,7 +902,29 @@
 
   </header>
 
-  <div id="by-date" role="tabpanel" aria-labelledby="tab-by-date">
+  <div id="by-summary" role="tabpanel" aria-labelledby="tab-by-summary">
+    <h2 class="panel-label">Summary</h2>
+        <section class="summary-card" aria-labelledby="summary-title">
+      <div class="summary-head">
+        <div><h2 class="summary-title" id="summary-title">Summary</h2></div>
+        <a class="to-top" href="#page-top">Back to top ↑</a>
+      </div>
+      <div class="summary-body">
+<p>December is a full house: <strong>377 performances</strong> of <strong>78 productions</strong>, at <strong>28 venues</strong> in four areas — Sarasota, Venice, Bradenton, and Lakewood Ranch. Every day of the month has at least one show posted.</p>
+    <h3>Highlights</h3>
+    <p>Holiday programs lead the listings (92), from Venice Theatre’s <a href="#fold-show-a-christmas-carol-venice-theatre">A Christmas Carol</a> (December 9–22, $19–$35) and Westcoast Black Theatre Troupe’s <a href="#fold-show-a-motown-christmas">A Motown Christmas</a> (December 2–30, $25–$60) to Asolo Rep’s <a href="#fold-show-it-s-a-wonderful-life-a-live-radio-play">It’s a Wonderful Life: A Live Radio Play</a>, which runs all month alongside <a href="#fold-show-singin-in-the-rain">Singin’ in the Rain</a>. Theatre (84) also includes <a href="#fold-show-august-osage-county">August: Osage County</a> at Venice Theatre through December 13. Broadway (37) is led by <a href="#fold-show-kimberly-akimbo">Kimberly Akimbo</a> at Florida Studio Theatre (from $39) and <a href="#fold-show-bodyguard">The Bodyguard</a> at the Van Wezel on December 1–2.</p>
+    <p>Concerts (95) keep FST’s <a href="#fold-show-american-rebels">American Rebels</a> and <a href="#fold-show-sailing-yacht-rock-and-beyond">Sailing: Yacht Rock and Beyond</a> in the cabaret rooms all month (from $37). <a href="#fold-show-daniil-trifonov">Daniil Trifonov</a> plays the Opera House on December 1, with <a href="#fold-show-chanticleer-holiday-concert">Chanticleer</a> there the next night. The Sarasota Orchestra brings <a href="#fold-show-masterworks-tchaikovsky-strauss">Masterworks: Tchaikovsky &amp; Strauss</a> to the Van Wezel on December 5–6 (from $43) and <a href="#fold-show-happy-holley-days">Happy Holley Days</a> to Holley Hall December 9–13. Dance (20) is a Nutcracker month, including <a href="#fold-show-nutcracker-sarasota-ballet">Sarasota Ballet</a> at the Opera House December 20–22 ($40–$95). The Jazz Club presents 10 jazz concerts, and Sailor Circus offers <a href="#fold-show-stars-stripes-snowflakes">Stars, Stripes &amp; Snowflakes</a> December 26–29. No opera performances are posted this month.</p>
+    <h3>Don’t miss, and the busy days</h3>
+    <p>The week of December 7–13 is the busiest, with 105 performances. Saturday the 12th is the peak day (31); Saturday the 19th is close behind (25). <a href="#fold-show-john-mulaney-mister-whatever">John Mulaney</a> is at the Van Wezel on December 10, and <a href="#fold-show-salute-to-vienna-new-year-s-concert">Salute to Vienna</a> closes the month on December 30.</p>
+    <h3>Free and low-cost</h3>
+    <p>Verified free events include the New College <a href="#fold-show-holiday-spectacular-new-college-chamber-orchestra">Holiday Spectacular</a> at Mildred Sainer Pavilion on December 2 (reservations required), Venice High concerts at VPAC, <a href="#fold-show-murals-in-motion">Murals in Motion</a> in the Rosemary District December 11–13, Jazz Club sessions at Selby Library, Van Wezel’s All Abilities Dance Workshop on December 11, and a <a href="#fold-show-winter-nights-under-the-lights">Chorus of the Keys concert</a> in Bradenton on December 19. SCF’s Handel’s Messiah on December 3 is $8–$15.</p>
+    <h3>Still to be listed</h3>
+    <p>The Players Centre has announced Between the Lines Jr. (December 3–6) and A Very Follies Christmas (December 18–20), but showtimes and prices were not posted, so those runs are not listed as rows. Urbanite Theatre has no December public performances; it reopens in January. Prices are left blank on 115 performances where official pages did not state them, including Asolo Rep, The Bully Pulpit, and Sailor Circus.</p>
+      </div>
+    </section>
+  </div>
+
+  <div id="by-date" role="tabpanel" aria-labelledby="tab-by-date" hidden>
     <h2 class="panel-label">By Date</h2>
     <p class="visually-hidden">Double-click, long-press, or press Enter or C on a focused show to add it to your calendar.</p>
     <p class="cal-caption">Double-click (or long-press) a show to add it to your calendar.</p>
@@ -1219,13 +1312,15 @@
   function hashId() {
     var h = (location.hash || "").replace(/^#/, "").toLowerCase();
     if (h === "page-top" || h === "top") return "";
+    if (h === "by-summary" || h === "summary") return "by-summary";
     if (h === "by-venue" || h === "by-date" || h === "by-area" || h === "by-band" || h === "by-genre") return h;
+    if (h.indexOf("fold-show-") === 0) return "by-band";
     if (h.indexOf("area-") === 0) return "by-area";
     if (h === "letter-nav" || h.indexOf("venue-") === 0) return "by-venue";
     if (h === "band-nav" || h.indexOf("band-") === 0) return "by-band";
     if (h === "genre-nav" || h.indexOf("genre-") === 0) return "by-genre";
     if (h === "date-nav" || h.indexOf("date-") === 0) return "by-date";
-    return "by-date";
+    return "by-summary";
   }
 
   function selectTab(tab, opts) {
@@ -1244,6 +1339,11 @@
     if (opts.updateHash !== false && location.hash !== hash) {
       if (history.replaceState) history.replaceState(null, "", hash);
       else location.hash = hash;
+    }
+    var lc = document.getElementById("list-controls");
+    if (lc) {
+      if (tab.getAttribute("aria-controls") === "by-summary") lc.setAttribute("hidden", "");
+      else lc.removeAttribute("hidden");
     }
   }
 
@@ -1282,6 +1382,12 @@
         if (!el && bm) el = document.getElementById("band-letter-" + bm[1]);
       }
       if (el) {
+        if (raw.toLowerCase().indexOf("fold-show-") === 0) {
+          var btn = document.querySelector('.fold-toggle[data-fold="' + raw + '"]');
+          if (btn && btn.getAttribute("aria-expanded") === "false") btn.click();
+          var head = btn && btn.closest("tr");
+          if (head) el = head;
+        }
         requestAnimationFrame(function () { el.scrollIntoView({ block: "start" }); });
       }
     }
